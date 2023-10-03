@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: solid 1px orange;
+}
+
+:root {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    overflow: auto;
+}
+
+.main {
+    grid-column: 2 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 60px 100px 1fr;
+}
+
+
+.header {
+
+}
