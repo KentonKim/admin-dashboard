@@ -1,7 +1,63 @@
+@font-face {
+    font-family: 'lyon';
+    src: url('fonts/Lyon\ Regular.ttf') format('woff');
+    font-weight: normal; /* for the regular font */
+    font-style: normal; /* for the regular font */
+}
+
+@font-face {
+    font-family: 'kievit';
+    src: url('fonts/kievit_regular.ttf') format('woff');
+    font-weight: normal; /* for the regular font */
+    font-style: normal; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit';
+    src: url('fonts/Kievit\ Black\ Italic.ttf') format('woff');
+    font-weight: normal; /* for the regular font */
+    font-style: italic; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit';
+    src: url('fonts/Kievit\ Bold.ttf') format('woff');
+    font-weight: bold; /* for the regular font */
+    font-style: normal; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit';
+    src: url('fonts/Kievit\ Bold\ Italic.ttf') format('woff');
+    font-weight: bold; /* for the regular font */
+    font-style: italic; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit';
+    src: url('fonts/Kievit\ Medium.ttf') format('woff');
+    font-weight: 500; /* for the regular font */
+    font-style: normal; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit';
+    src: url('fonts/Kievit\ Medium\ Italic.ttf') format('woff');
+    font-weight: 500; /* for the regular font */
+    font-style: italic; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit-book';
+    src: url('fonts/Kievit\ Book.ttf') format('woff');
+    font-weight: normal; /* for the regular font */
+    font-style: normal; /* for the regular font */
+}
+@font-face {
+    font-family: 'kievit-book';
+    src: url('fonts/Kievit\ Book\ Italic.ttf') format('woff');
+    font-weight: normal; /* for the regular font */
+    font-style: italic; /* for the regular font */
+}
+
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 a {
@@ -12,72 +68,225 @@ li {
     list-style: none;
 }
 
+button {
+    appearance: none;
+    border: none;
+}
 
 :root {
     height: 100%;
     width: 100%;
+    font-family: 'kievit', sans-serif;
+    --green-light: #e3ede5;
+    --green-dark: #024c11;
     --green: #036016;
     --yellow: #E9D985;
     --black: #000000;
     --white: #FFF;
+    --gray: #313131; 
 }
 
 body {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 80px 1fr;
     height: 100%;
     width: 100%;
 }
 
+.font-fancy {
+    font-family: "lyon", sans-serif;
+}
+
+.font-11 {
+    font-size: 10px;
+}
+
+.green-font {
+    color: var(--green);
+}
+
+.yellow-font {
+    color:var(--yellow);
+}
+
+.font-32 {
+    font-size: 32px;
+}
+
+.border-top {
+    border-top: 1px solid gray;
+}
+
+.filter-green {
+    filter: invert(21%) sepia(46%) saturate(2312%) hue-rotate(108deg) brightness(102%) contrast(98%);
+}
+
 .sidebar {
-    grid-column: 1;
-    grid-row: 1;
     display: grid;
     overflow: auto;
     background-color: var(--green);
     color: var(--white);
+    font-size: smaller;
+}
+
+.sidebar > a:first-child {
+    margin-bottom: 15px;
 }
 
 .sidebar > a {
     color: var(--white);
     text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.1s ease-in;
+}
+
+.sidebar > .selected-tab {
+    background-color: var(--white);
+    color: var(--green);
+}
+
+.sidebar > a:not(:first-child):not(.selected-tab):hover {
+    background-color: var(--green-dark);
+}
+
+.selected-tab > .side-icon {
+    filter: invert(21%) sepia(46%) saturate(2312%) hue-rotate(108deg) brightness(102%) contrast(98%);
+}
+
+.side-icon {
+    width: 60%;
+    filter: invert(100%);
+}
+
+#broccoli {
+    width: 80%;
+    filter: invert(0);
 }
 
 .main {
     display: grid;
     grid-template-rows: 1fr auto;
+    padding: 20px;
 }
 
 .content {
     display: grid;
     grid-template-columns: 1fr 300px;
+    gap: 40px;
+}
+
+.tasks {
+    padding: 15px;
+}
+
+.todo, .feedback {
+    margin-bottom: 20px;
+}
+
+.todo > ul, .feedback > ul {
+    padding-top: 8px;
+    margin-top: 8px;
 }
 
 .middle {
     display: grid;
-    grid-template-rows: 80px 50px 1fr;
+    grid-template-rows: 80px 1fr;
 }
 
 .header {
     display: flex;
+    align-items: center;
 }
 
-.header :nth-child(1) {
+.header-left {
     flex: 1;
+    font-size: 48px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.articles {
+}
+
+#dots-bttn {
+    height: 40px;
+    width: 40px;
+    background-color: var(--white);
+    border-radius: 5px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+#dots-icon {
+    transform: rotate(90deg);
+    width: 80%;
+    height: 80%;
+}
+
+#dots-bttn:hover {
+    background-color: var(--green-light);
 }
 
 .title {
     text-align: center;
+    font-size: 36px;
+    height: 100px;
 }
 
 .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.footer-left {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+}
+
+.footer-left > span {
+    margin-top: -10px;
+    padding: 2px;
 }
 
 .footer-right {
+    width: 600px;
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
     column-gap: 30px;
+}
+
+.footer-right > a {
+    color: var(--gray);
+}
+
+@media only screen and (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .footer {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+    .footer-right {
+        flex-flow: column;
+        align-items: end;
+    }
+    body {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: none;
+    }
 }

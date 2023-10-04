@@ -5,51 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./icons/broccoli-green.svg">
 </head>
 <body>
     <div class="sidebar">
         <a href="">
-            <img src="" alt="logo" srcset="">
-            ACourses
+            <img src="./icons/broccoli.svg" alt="logo" srcset="" id="broccoli" class="side-icon">
         </a>
         <a href="">
-            <img src="" alt="account icon" srcset="">
+            <img src="./icons/account.svg" alt="account icon" srcset="" class="side-icon">
             Account
         </a>
-        <a href="">
-            <img src="" alt="dashboard icon" srcset="">
+        <a href="" class="selected-tab">
+            <img src="./icons/dashboard.svg" alt="dashboard icon" srcset="" class="side-icon ">
             Dashboard
         </a>
         <a href="">
-            <img src="" alt="courses icon" srcset="">
+            <img src="./icons/courses.svg" alt="courses icon" srcset="" class="side-icon">
             Courses
         </a>
         <a href="">
-            <img src="" alt="groups icon" srcset="">
+            <img src="./icons/groups.svg" alt="groups icon" srcset="" class="side-icon">
             Groups
         </a>
         <a href="">
-            <img src="" alt="calendar icon" srcset="">
+            <img src="./icons/calendar.svg" alt="calendar icon" srcset="" class="side-icon">
             Calendar
         </a>
         <a href="">
-            <img src="" alt="inbox icon" srcset="">
+            <img src="./icons/inbox.svg" alt="inbox icon" srcset="" class="side-icon">
             Inbox
         </a>
         <a href="">
-            <img src="" alt="history icon" srcset="">
+            <img src="./icons/history.svg" alt="history icon" srcset="" class="side-icon">
             History
         </a>
         <a href="">
-            <img src="" alt="academic policies icon" srcset="">
+            <img src="./icons/academic.svg" alt="academic policies icon" srcset="" class="side-icon">
             Academic Policies
         </a>
         <a href="">
-            <img src="" alt="mental health icon" srcset="">
+            <img src="./icons/mental.svg" alt="mental health icon" srcset="" class="side-icon">
             Mental Health Resources
         </a>
         <a href="">
-            <img src="" alt="help icon" srcset="">
+            <img src="./icons/help.svg" alt="help icon" srcset="" class="side-icon">
             Help
         </a>
     </div>
@@ -57,44 +57,43 @@
         <div class="content">
             <div class="middle">
                 <div class="header">
-                    <div>
+                    <div class="header-left green-font">
                         Dashboard
                     </div>
-                    <button>
-                        <img src="" alt="three dots icon">
-                    </button>
+                    <div class="header-right">
+                        <button id="dots-bttn">
+                            <img src="icons/dots.svg" alt="three dots icon" id="dots-icon" class="filter-green">
+                        </button>
+                    </div>
                 </div>
-                <div class="nav">
-                    Recent Activity 
-                </div>
-                <div class="articles">
+                <div class="articles border-top">
                     articles
                 </div>
             </div>
             <div class="tasks">
                 <div class="title">
-                    ACourses
+                    <span class="green-font"><strong>a</strong></span><span class="yellow-font">Courses</span>
                 </div>
                 <div class="todo">
-                    To Do
-                    <ul>
+                    <strong>To Do</strong>
+                    <ul class="border-top">
                         <li>Nothing for now</li>
                     </ul>
                 </div>
                 <div class="feedback">
-                    Recent Feedback
-                    <ul>
+                    <strong>Recent Feedback</strong>
+                    <ul class="border-top">
                         <li>Nothing for now</li>
                     </ul>
                 </div>
                 <button>View Grades</button>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer-left">
-                <a href="">
-                    <img src="" alt="broccoli ico">
-                </a>
+        <div class="footer border-top">
+            <div class="footer-left font-fancy font-32" >
+                Broccoli <br><span class="font-11">
+                    University of Cauliflower
+                </span>            
             </div>
             <div class="footer-right">
                 <a href="">About</a>
