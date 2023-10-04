@@ -1,12 +1,17 @@
 * {
     margin: 0;
     padding: 0;
+    border: 1px solid black;
 }
 
 a {
     text-decoration: none;
-    color: var(--white);
 }
+
+li {
+    list-style: none;
+}
+
 
 :root {
     height: 100%;
@@ -33,6 +38,10 @@ body {
     color: var(--white);
 }
 
+.sidebar > a {
+    color: var(--white);
+    text-align: center;
+}
 
 .main {
     display: grid;
@@ -49,6 +58,17 @@ body {
     grid-template-rows: 80px 50px 1fr;
 }
 
+.header {
+    display: flex;
+}
+
+.header :nth-child(1) {
+    flex: 1;
+}
+
+.title {
+    text-align: center;
+}
 
 .footer {
     display: grid;
