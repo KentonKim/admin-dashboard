@@ -1,20 +1,43 @@
 const articleDiv = document.querySelector('.articles');
 
-const addComponent = (className = "", type= 'div', text = "", src = "") => {
-    const element = document.createElement(type);
-    element.className = className;
-    element.textContent = text;
-    if (element.hasAttribute('src')) {
-        element.src = src;
+const addComponent = (className = undefined, text = undefined)=> {
+    const element = document.createElement('div');
+    if (className != undefined) {
+        element.className = className;
+    }
+    if (text != undefined) {
+        element.textContent = text;
     }
     return element;
 };
 
+const addButton = (className = undefined, text = undefined) => {
+    const button = document.createElement('button');
+    if (className != undefined) {
+        button.className = className;
+    }
+    if (text != undefined) {
+        button.textContent = text;
+    }
+    return button;
+};
+
+const addImg = (src, className = undefined) => {
+    const img = document.createElement('img');
+    img.src = src;
+    if (className != undefined) {
+        img.classList = className;
+    }
+    return img;
+};
+
+
 const createCourseBox = (color, title, subtitle, semester) => {
     const courseCard = addComponent('course');
 
-    const bttnDots = addComponent("bttn-dots", "button");
-    const imgDots = addComponent('', 'img', '', "./icons/dots.svg");
+    const bttnDots = addButton("course-bttn-dots");
+    bttnDots.style.backgroundColor = color;
+    const imgDots = addImg("./icons/dots.svg");
     bttnDots.appendChild(imgDots);
     courseCard.appendChild(bttnDots);
 
@@ -23,37 +46,43 @@ const createCourseBox = (color, title, subtitle, semester) => {
     courseCard.appendChild(backgroundDiv);
 
     const courseInfoDiv = addComponent("course-info");
-    const courseTitle = addComponent("course-title", 'div', text = title);
+    const courseTitle = addComponent("course-title", title);
     courseTitle.style.color = color;
     courseInfoDiv.appendChild(courseTitle);
-    const courseSubtitle = addComponent("course-subtitle", 'div', text = subtitle);
+    const courseSubtitle = addComponent("course-subtitle font-gray", subtitle);
     courseInfoDiv.appendChild(courseSubtitle);
-    const courseSemester = addComponent("course-semester", 'div', text = semester);
+    const courseSemester = addComponent("course-semester font-gray", semester);
     courseInfoDiv.appendChild(courseSemester);
     courseCard.appendChild(courseInfoDiv);
 
     const courseBttns = addComponent("course-bttns");
-    const courseBttnSpeaker = addComponent("course-bttn", "button");
-    const courseImgSpeaker = addComponent("course-bttn-img", "img", src= "./icons/megaphone.svg");
+    const courseBttnSpeaker = addButton("course-bttn");
+    const courseImgSpeaker = addImg("./icons/megaphone.svg", "course-bttn-img");
     courseBttnSpeaker.appendChild(courseImgSpeaker);
     courseBttns.appendChild(courseBttnSpeaker);
-    const courseBttnAssignments = addComponent("course-bttn", "button");
-    const courseImgAssignments = addComponent("course-bttn-img", "img", src= "./icons/asssignments.svg");
+    const courseBttnAssignments = addButton("course-bttn");
+    const courseImgAssignments = addImg("./icons/asssignments.svg", "course-bttn-img");
     courseBttnAssignments.appendChild(courseImgAssignments);
     courseBttns.appendChild(courseBttnAssignments);
-    const courseBttnDiscussions = addComponent("course-bttn", "button");
-    const courseImgDiscussions = addComponent("course-bttn-img", "img", src= "./icons/messages.svg");
+    const courseBttnDiscussions = addButton("course-bttn");
+    const courseImgDiscussions = addImg("./icons/messages.svg", "course-bttn-img");
     courseBttnDiscussions.appendChild(courseImgDiscussions);
     courseBttns.appendChild(courseBttnDiscussions);
-    const courseBttnFiles = addComponent("course-bttn", "button");
-    const courseImgFiles = addComponent("course-bttn-img", "img", src= "./icons/files.svg");
+    const courseBttnFiles = addButton("course-bttn");
+    const courseImgFiles = addImg("./icons/files.svg", "course-bttn-img");
     courseBttnFiles.appendChild(courseImgFiles);
     courseBttns.appendChild(courseBttnFiles);
     courseCard.appendChild(courseBttns);
     return courseCard;
 };
 
-articleDiv.appendChild(createCourseBox("white", 'title', 'subtitle', 'semester'));
+articleDiv.appendChild(createCourseBox("purple", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("lightblue", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("green", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("orange", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("red", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("aquamarine", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("brown", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
 
 
 
