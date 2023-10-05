@@ -57,7 +57,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 a {
@@ -78,6 +78,7 @@ button {
     width: 100%;
     font-family: 'kievit', sans-serif;
     --green-light: #e3ede5;
+    --green-light2: #ccd5ce;
     --green-dark: #024c11;
     --green: #036016;
     --yellow: #E9D985;
@@ -170,6 +171,7 @@ body {
     display: grid;
     grid-template-rows: 1fr auto;
     padding: 20px;
+    overflow: auto;
 }
 
 .content {
@@ -194,11 +196,13 @@ body {
 .middle {
     display: grid;
     grid-template-rows: 80px 1fr;
+    gap: 20px;
 }
 
 .header {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid var(--gray);
 }
 
 .header-left {
@@ -212,9 +216,16 @@ body {
 }
 
 .articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 30px;
 }
 
-#dots-bttn {
+.articles > div {
+    height: 250px;
+}
+
+.header-right > .bttn-dots {
     height: 40px;
     width: 40px;
     background-color: var(--white);
@@ -228,8 +239,17 @@ body {
     height: 80%;
 }
 
-#dots-bttn:hover {
+.header-right > .bttn-dots:hover {
     background-color: var(--green-light);
+}
+
+#bttn-grades {
+    width: 100%;
+    height: 40px;
+    background-color: var(--green-light);
+    border-radius: 3px;
+    border: 1px solid var(--green-light2);
+    font-size: 18px;
 }
 
 .title {
@@ -254,39 +274,42 @@ body {
 }
 
 .footer-right {
-    width: 600px;
+    width: 500px;
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
-    column-gap: 30px;
+    column-gap: 10px;
 }
 
 .footer-right > a {
     color: var(--gray);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .content {
         grid-template-columns: 1fr;
     }
-}
-
-@media only screen and (max-width: 800px) {
     .footer {
-        grid-template-columns: 1fr;
-        grid-auto-flow: row;
-  }
+        flex-flow: column;
+    }
+    .footer-right {
+        align-self: flex-end;
+    }
+    .title {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 700px) {
-    .footer-right {
-        flex-flow: column;
-        align-items: end;
-    }
     body {
         grid-template-columns: 1fr;
     }
     .sidebar {
         display: none;
+    }
+    .footer-right {
+        flex-flow: column;
+        align-items: end;
+        width: 100%;
     }
 }
