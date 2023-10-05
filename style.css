@@ -315,6 +315,13 @@ body {
     0 2px 2px var(--gray-light); /* Bottom shadow */
 }
 
+.course:hover {
+    box-shadow:
+    4px 0 4px var(--gray-light), /* Right shadow */
+   -4px 0 4px var(--gray-light), /* Left shadow */
+    0 4px 4px var(--gray-light); /* Bottom shadow */
+}
+
 .course-bttn {
     width: 30px;
 }
