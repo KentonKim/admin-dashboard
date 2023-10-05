@@ -72,6 +72,7 @@ button {
     appearance: none;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 button > img {

@@ -77,12 +77,9 @@ const createCourseBox = (color, title, subtitle, semester) => {
 };
 
 articleDiv.appendChild(createCourseBox("purple", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
-articleDiv.appendChild(createCourseBox("lightblue", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
-articleDiv.appendChild(createCourseBox("green", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
-articleDiv.appendChild(createCourseBox("orange", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
-articleDiv.appendChild(createCourseBox("red", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
-articleDiv.appendChild(createCourseBox("aquamarine", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
-articleDiv.appendChild(createCourseBox("brown", 'Asian American Health (Fall 2022)', 'ASAMST 143AC-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("lightblue", 'Design of Steel Structures (Fall 2022)', 'CIVENG 122-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("green", 'Structural Design in Timber (Fall 2022)', 'CIVENG 124-SEM-001', 'Fall 2022'));
+articleDiv.appendChild(createCourseBox("orange", 'Transportation Systems Engineering', 'CIVENG 155-SEM-001', 'Fall 2022'));
 
 
 
